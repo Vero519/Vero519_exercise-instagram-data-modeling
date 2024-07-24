@@ -12,9 +12,9 @@ class Follower(Base):
     # Here we define columns for the table person
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
-    user_from_id = Column(String(250), nullable=False)
-    user_to_id = Column(String(250), nullable=False)
-    user_id = Column(Integer, ForeignKey('user.id'),
+    user_from_id = Column(Integer, ForeignKey('user.id'),
+        nullable=False)
+    user_to_id = Column(Integer, ForeignKey('user.id'),
         nullable=False)
     
 class User(Base):
